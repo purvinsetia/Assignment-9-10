@@ -1,0 +1,94 @@
+Q.1- Create a class Animal as a base class and define method animal_attribute.
+Create another class Tiger which is inheriting Animal and access the base class method.
+
+class Animal:
+    def animal_attribute(self):
+        print("tiger")
+class Tiger(Animal):
+    def tiger():
+        pass
+
+animals = Tiger()
+animals.animal_attribute()
+
+-----------------------------------------------------------------------------------------
+
+Q.2- Output
+
+A B
+A B
+
+-----------------------------------------------------------------------------------------
+Q.3- Create a class Cop. Initialize its name, age , work experience and designation.
+Define methods to add, display and update the following details.
+Create another class Mission which extends the class Cop. Define method add_mission _details. 
+Select an object of Cop and access methods of base class to get information for a particular 
+cop and make it available for mission.
+
+class Cop:
+    
+    def __init__(self,na="",ag="",wrk="",exp="",desig=""):
+        self.name=na
+        self.age=ag
+        self.work=wrk
+        self.experience=exp
+        self.designation=desig
+        
+    def add_info(self):
+        self.name=input("Enter Name-> ")
+        self.age=int(input("Enter age-> "))
+        self.work=input("Enter Your Work-> ")
+        self.experience=int(input("Enter Experience In Months-> "))
+        self.designation=input("Enter Designation-> ")
+        
+    def display_info(self):
+        print ("\nName : %s"%(self.name))
+        print ("Age : %d"%(self.age))
+        print ("Work : %s"%(self.work))
+        print ("Experience(In Months) : %d"%(self.experience))
+        print ("Designation : %s"%(self.designation))
+    
+    def update(self,N,A,W,E,D):
+        self.name=N
+        self.age=A
+        self.work=W
+        self.experience=E
+        self.designation=D
+
+class Mission(Cop):
+    def add_mission_details(self,add):
+        print("\nMission Details : %s"%(add))
+
+a1=Mission()
+a1.add_info()
+a1.add_mission_details("The curious case of benjamin button")
+a1.display_info()
+
+--------------------------------------------------------------------------------------------------
+
+Q.4- Create a class Shape.Initialize it with length and breadth Create the method Area.
+Create class rectangle and square which inherits shape and access the method Area.
+
+class Shape():
+    length=int()
+    breadth=int()
+    def area(self,l,b):
+        self.length=l
+        self.breadth=b
+        return self.length*self.breadth
+class Rectangle(Shape):
+    def display_area(self):
+        l=int(input("Enter length"))
+        b=int(input("Enter breadth"))
+        print("Area is",self.area(l,b))
+
+
+class Square(Shape):
+   def display_area(self):
+      a=int(input("Enter side length of square: "))
+      print("Area of Square: ",self.area(a,a))
+
+r=Rectangle()
+r.display_area()
+s= Square()
+s.display_area()
