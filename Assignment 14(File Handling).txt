@@ -1,0 +1,118 @@
+File: abc.txt
+
+“Atticus said to Jem one day, “I’d rather you shot at tin cans in the backyard, but I know you’ll go after birds. 
+Shoot all the blue jays you want, if you can hit ‘em, but remember it’s a sin to kill a mockingbird.” 
+That was the only time I ever heard Atticus say it was a sin to do something, and I asked Miss Maudie about it. 
+“Your father’s right,” she said. “Mockingbirds don’t do one thing except make music for us to enjoy. 
+They don’t eat up people’s gardens, don’t nest in corn cribs, they don’t do one thing but sing their hearts out for us. 
+That’s why it’s a sin to kill a mockingbird.” – Harper Lee, To Kill a Mockingbird
+
+------------------------------------------------------------------------------------------------------------------------
+
+Q.1- Write a Python program to read last n lines of a file.
+
+with open("abc.txt",'r') as f:
+    data=f.readlines()
+    for line in data:
+        print(line)
+    l = len(data)
+    n= int(input("\n\nenter the value of n to print last n lines->"))
+    if (n<=l):
+        print(data[n:])
+    else:
+        print("n is out of bound")
+
+------------------------------------------------------------------------------------------------------------------------
+
+Q.2- Write a Python program to count the frequency of words in a file.
+
+wordcount={}
+with open('abc.txt','r+') as f:
+
+    data = f.readlines()
+    
+    for line in data:
+        words=line.split()
+        print(words,"\n")
+        for k in words:
+            if k in wordcount:
+                wordcount[k] += 1
+            else:
+                wordcount[k] = 1
+
+print(wordcount)
+
+------------------------------------------------------------------------------------------------------------------------
+
+Q.3- Write a Python program to copy the contents of a file to another file
+
+f=open("abc.txt",'r')
+data=f.read()
+print(data)
+f2= open("pqr.txt",'r+')
+f2.write(data)
+f2.close()
+f3=open("pqr.txt",'r')
+abc=f3.read()
+print(abc)
+f3.close()
+
+------------------------------------------------------------------------------------------------------------------------
+File: a.txt
+
+brazil has
+reached the
+quarter finals
+of fifa world cup 2018.
+
+file: b.txt
+
+belgium has
+also made it
+to the quarter finals
+of fifa world cup 2018.
+
+
+Q.4- Write a Python program to combine each line from first file with the corresponding
+ line in second file.
+
+with open("a.txt",'r') as f1, open('b.txt','r') as f2,open('c.txt','w') as f3:
+    
+    a=f1.readlines()
+    b=f2.readlines()
+    for line1,line2 in zip(a,b):
+        line4=line1+line2
+        f3.write(line4)
+
+f4=open('c.txt','r')
+print(f4.read())
+f4.close()
+
+------------------------------------------------------------------------------------------------------------------------
+
+Q.5- Write a Python program to write 10 random numbers into a file. Read the file and
+     then sort the numbers and then store it to another file.
+
+with open('file1.txt','w') as f1:
+    for i in range(10):
+        z=int(input("enter 10 integers"))
+        f1.write("%d "%z)
+
+with open('file1.txt','r') as f2,open('file2.txt','w') as f3:
+
+    data=f2.readlines()
+
+    for nos in data:
+        nums=nos.split()
+    nums.sort()
+    for word in nums:
+        f3.write("%s "%word)
+
+f3=open('file1.txt','r')
+print(f3.read())
+f3.close
+    
+f4=open('file2.txt','r')
+print(f4.read())
+f4.close
+
