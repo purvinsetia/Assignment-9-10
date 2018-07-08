@@ -1,0 +1,17 @@
+Q.2- Get the IP address of some common sites like Google, Facebook by using DNS lookup.
+import socket
+
+addr1 = socket.gethostbyname('google.com')
+addr2 = socket.gethostbyname('yahoo.com')
+
+print(addr1, addr2)
+
+-->Open a DOS command window. To do this, click Start, click Run, type cmd, and then press Enter.
+At the command prompt, type the following command. Replace example.com with the domain that you want to test: nslookup example.com. ...
+Interpret the output from nslookup
+--------------------------------------------------------------------------------------------------------------------------
+Q.4- What is a difference between library and API . Figure it out with examples.
+API is a part of library which defines how an application communicates with external code
+API can be written in any language.
+Library is written in same language which is a collection of all the functionalities required for the use case.
+For example : Numpy is a library of Python, adding support for large, multi-dimensional arrays and matrices, along with a large collection of high-level mathematical functions to operate on these arrays.
